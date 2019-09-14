@@ -1,16 +1,203 @@
+/* SET-UP */
 :root {
     --pink: #E10098;
     --bluelight: #0047BB;
     --yellow: #FEDB00;
     --blue: #10069F;    
     --white: #fff;
+    --gray: #C8C8C8;
     --black: #000;
 }
-  
+ 
+@font-face {
+    font-family: TiemposText;
+    src: url(fonts/Tiempos\ Text\ -\ Semibold.otf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: TiemposText;
+    src: url(fonts/Tiempos\ Text\ -\ Medium.otf);
+    font-weight: thin;
+}
+
+
+@font-face {
+    font-family: TiemposFine;
+    src: url(fonts/TiemposFine-Light.otf);
+}
+
+@font-face {
+    font-family: Theinhardt;
+    src: url(fonts/Theinhardt-Light.otf);
+    font-weight: thin;
+}
+
+@font-face {
+    font-family: Theinhardt;
+    src: url(fonts/Theinhardt-Regular.otf);
+    font-weight: bold;
+}
+
+
+body {
+    /* background-color: var(--black); */
+    background-image: url("images/gradient.png");
+    background-color: var(--yellow);
+}
+
+/* HEADER */
 .logo {
     width: 40vw;
     box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.25);
     padding: 20px;
     background-color: var(--pink);
+    position: absolute;
+}
+
+
+/* MAIN */
+.wrapper {
+    display: flex;
+}
+
+.black-mass{
+height: 100vh;
+width: 166px;
+background-color: var(--black);
+box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.25);
+}
+
+article {
+    background-color: var(--bluelight);
+    /* position: absolute; */
+    width: 653px;
+    height: 100vh;
+    top:0;
+    z-index: -2;
+}
+.ornaments {
+    margin-top: 40vh;
+    width: 100%;
+}
+
+.num-wrapper {
+    border-top: 12px solid var(--yellow);
+    margin-left: 93px;
+    position: relative;
+    top: 20vh;
+    width: 300px; 
+}
+
+h1 {
+    color: var(--yellow);
+    font-size: 200px;
+    font-family: TiemposText;
+    font-weight: 600;
+}
+
+h2 {
+  font-family: TiemposText;
+  font-size: 22px;
+  line-height: 3;
+  color: var(--white);
+}
+
+/* SIDEBAR */
+aside {
+    z-index: 5;
+    background-color: var(--white);
+}
+
+.creds-item {
+    border-top: 0.5px solid var(--gray);
+    border-bottom: 1px solid var(--gray);
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 55px;
+    padding-right: 55px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.cred {
+    width: 158px;
+    height: 30px;
+    font-family: Theinhardt;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.25;
+    color: var(--pink);
+}
+
+.email {
+    text-decoration: underline;
+}
+
+.label {
+    width: 63px;
+    height: 16px;
+    font-family: Theinhardt;
+    font-weight: bold;
+    padding-top: 10px; 
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: var(--bluelight);
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--yellow);
+    position: absolute;
+    width: 80vw;
+    bottom: 0;
+    right: 0;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    padding-left: 60px;
+    padding-right: 60px;
+    display: flex;
+    z-index: 10;
+    justify-content: space-between;
+}
+
+.text-bottom {
+    width: 400px;
+}
+
+p {
+    margin-bottom: 20px;
+    font-family: TiemposFine;
+    font-size: 16px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.38;
+    letter-spacing: 0.4px;
+    color: var(--blue);
+}
+
+h5 {
+    width: 311px;
+    height: 19px;
+    font-family: Theinhardt;
+    font-size: 14px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.14;
+    letter-spacing: 2.75px;
+    color: var(--blue);
+    text-transform: uppercase;
+}
+
+.portfolio {
+    color: var(--pink);
+}
+
+.logo-bottom {
+    margin-top: 60px;
+    height: 50px;    
 }
 
