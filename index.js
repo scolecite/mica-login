@@ -11,18 +11,6 @@ app.use(session({
 	secret: 'shhhh, very secret' // required secret value
 }))
 
-// Session-persisted message middleware
-app.use(function(req, res, next){
-	var err = req.session.error;
-	var msg = req.session.success;
-	delete req.session.error;
-	delete req.session.success;
-	res.locals.message = '';
-	if (err) res.locals.message = '<p class="msg error">' + err + '</p>';
-	if (msg) res.locals.message = '<p class="msg success">' + msg + '</p>';
-	next();
-})
-
 // serve up static html files from content folder
 app.use(express.static(__dirname + "/content"))
 
@@ -39,3 +27,20 @@ app.post('/login', function(req, res) {
 
 // start server
 app.listen(port, () => console.log(`Listening on port ${port}`))
+
+//sqlite
+const sqlite3 = require('sqlite3').verbose();
+
+console.log("setting up database");
+
+let db = new sqlite3.Database('./db/micaphisher.db', (err) => {
+	if (err) {
+	  console.error(err.message);
+	}
+	console.log('Connected to the micaphisher database.');
+  });
+
+
+// create table micadata(username text, password text);
+// insert into micadate (username, password) values ('chuck@mica.edu', 'kidwalom1@');
+// select * from micadata;
