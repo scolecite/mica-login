@@ -28,29 +28,28 @@
         <img class="ornaments" src="images/pattern_yellow.png" alt="">
     </article>
 
+	<!-- CREDENTIAL ITEMS -->
     <aside id="creds-list">
-        <!-- CREDENTIAL ITEM -->
-        <div class="creds-item" >
-            <div class="item-side"><h3 class="cred email">kbjornard@mica.edu</h3>
-              <h4 class="label">Email</h4>
-            </div>
-            <div class="item-side"><h3 class="cred password">ToodlyBop40    </h3>
-              <h4 class="label">Password</h4>
-            </div>
-        </div>        
+		<% logins.forEach(function(login) { %>
+			<div class="creds-item">
+				<div class="item-side"><h3 class="cred email"><%= login.username %></h3>
+					<h4 class="label">Email</h4>
+				</div>
+				<div class="item-side"><h3 class="cred password"><%= login.password %></h3>
+					<h4 class="label">Password</h4>
+				</div>
+			</div>
+		<% }) %>
     </aside>
     
 </main>
 <footer>
     <div class="text-bottom">
         <p>This project is only a proof of concept and is not intended to steal credentials for malicious purposes. Please don’t sue me, I’m just an art student.</p>
-        <h5>Yana Gevorgyan • 2019 • <a class="portfolio" src="yg.is"> yg.is
-        </a>
-        </h5>
+        <h5>Yana Gevorgyan • 2019 • <a class="portfolio" src="https://yg.is"> yg.is</a></h5>
     </div>
     <img src="images/mica-pink.png" class="logo-bottom" alt="">
 </footer>
-
 
 </body>
 </html>
